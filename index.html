@@ -5,16 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Privacy Policy - Lacto Tracker</title>
   <style>
+    @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&family=Sora:wght@600;700&display=swap");
+
     :root {
-      --bg: #f6f8fc;
-      --surface: #ffffff;
-      --text: #0f172a;
-      --muted: #475569;
-      --primary: #0ea5e9;
-      --primary-soft: #e0f2fe;
-      --border: #dbe5f0;
-      --shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
-      --radius: 20px;
+      --bg-base: #eef5ff;
+      --bg-accent: #dff4ff;
+      --surface: rgba(255, 255, 255, 0.86);
+      --surface-strong: #ffffff;
+      --text: #14213d;
+      --muted: #4f5d75;
+      --line: #d4e2f3;
+      --primary: #0077b6;
+      --primary-deep: #023e8a;
+      --badge: #caf0f8;
+      --shadow: 0 18px 45px rgba(2, 62, 138, 0.16);
+      --radius-xl: 26px;
+      --radius-md: 16px;
     }
 
     * {
@@ -24,43 +30,78 @@
     body {
       margin: 0;
       min-height: 100vh;
-      font-family: "Avenir Next", "Segoe UI", "SF Pro Text", sans-serif;
+      font-family: "DM Sans", "Avenir Next", sans-serif;
       color: var(--text);
       background:
-        radial-gradient(circle at 10% 0%, #e0f2fe 0%, transparent 35%),
-        radial-gradient(circle at 90% 100%, #dbeafe 0%, transparent 30%),
-        var(--bg);
-      line-height: 1.65;
-      padding: 32px 16px;
+        radial-gradient(circle at 0% 0%, #d8f3ff 0%, transparent 42%),
+        radial-gradient(circle at 100% 100%, #cfe1ff 0%, transparent 34%),
+        linear-gradient(130deg, var(--bg-base), var(--bg-accent));
+      padding: 34px 16px;
+    }
+
+    .glow {
+      position: fixed;
+      z-index: -1;
+      filter: blur(38px);
+      opacity: 0.6;
+      pointer-events: none;
+    }
+
+    .glow.a {
+      width: 240px;
+      height: 240px;
+      background: #90e0ef;
+      top: -80px;
+      left: -70px;
+    }
+
+    .glow.b {
+      width: 300px;
+      height: 300px;
+      background: #a0c4ff;
+      bottom: -120px;
+      right: -90px;
     }
 
     .container {
-      max-width: 840px;
+      max-width: 930px;
       margin: 0 auto;
       background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
+      border: 1px solid rgba(255, 255, 255, 0.65);
+      border-radius: var(--radius-xl);
+      backdrop-filter: blur(14px);
       box-shadow: var(--shadow);
       overflow: hidden;
     }
 
     .hero {
-      padding: 40px 28px 26px;
-      background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
-      color: #f8fafc;
+      position: relative;
+      background: linear-gradient(145deg, #0077b6 0%, #00b4d8 55%, #90e0ef 120%);
+      padding: 44px 32px 34px;
+      color: #f8fdff;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 -1px;
+      height: 18px;
+      background: linear-gradient(to top, rgba(255, 255, 255, 0.85), transparent);
     }
 
     .hero h1 {
-      margin: 0 0 10px;
-      font-size: clamp(1.7rem, 3.2vw, 2.3rem);
-      line-height: 1.2;
-      letter-spacing: -0.02em;
+      margin: 0;
+      font-family: "Sora", "Avenir Next", sans-serif;
+      font-size: clamp(1.9rem, 4vw, 2.8rem);
+      line-height: 1.12;
+      letter-spacing: -0.03em;
     }
 
     .hero p {
-      margin: 0;
-      opacity: 0.95;
+      margin: 14px 0 0;
       font-size: 0.98rem;
+      font-weight: 600;
+      opacity: 0.96;
     }
 
     .content {
@@ -68,6 +109,206 @@
     }
 
     .lead {
+      margin: 0 0 18px;
+      padding: 18px;
+      background: var(--surface-strong);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      color: var(--muted);
+      font-size: 1.03rem;
+    }
+
+    .grid {
+      display: grid;
+      gap: 14px;
+    }
+
+    .section {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 14px;
+      align-items: start;
+      background: var(--surface-strong);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      padding: 16px;
+      animation: riseIn 0.45s ease both;
+    }
+
+    .section:nth-child(2) { animation-delay: 0.03s; }
+    .section:nth-child(3) { animation-delay: 0.06s; }
+    .section:nth-child(4) { animation-delay: 0.09s; }
+    .section:nth-child(5) { animation-delay: 0.12s; }
+    .section:nth-child(6) { animation-delay: 0.15s; }
+    .section:nth-child(7) { animation-delay: 0.18s; }
+    .section:nth-child(8) { animation-delay: 0.21s; }
+
+    .number {
+      width: 34px;
+      height: 34px;
+      border-radius: 11px;
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      background: var(--badge);
+      color: var(--primary-deep);
+      border: 1px solid #ade8f4;
+      flex-shrink: 0;
+    }
+
+    .section h2 {
+      margin: 0 0 6px;
+      font-family: "Sora", "Avenir Next", sans-serif;
+      font-size: 1.03rem;
+      line-height: 1.25;
+      letter-spacing: -0.01em;
+    }
+
+    .section p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .contact {
+      border-color: #90e0ef;
+      background: linear-gradient(130deg, #ffffff, #f1fcff);
+    }
+
+    a {
+      color: var(--primary-deep);
+      text-decoration-thickness: 1.5px;
+      text-underline-offset: 2px;
+    }
+
+    @keyframes riseIn {
+      from {
+        opacity: 0;
+        transform: translateY(8px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 700px) {
+      body {
+        padding: 18px 10px;
+      }
+
+      .hero {
+        padding: 28px 20px 24px;
+      }
+
+      .content {
+        padding: 18px;
+      }
+
+      .section {
+        padding: 13px;
+        gap: 10px;
+      }
+
+      .number {
+        width: 30px;
+        height: 30px;
+        border-radius: 9px;
+        font-size: 0.9rem;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .section {
+        animation: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="glow a" aria-hidden="true"></div>
+  <div class="glow b" aria-hidden="true"></div>
+
+  <main class="container">
+    <header class="hero">
+      <h1>Privacy Policy for Lacto Tracker</h1>
+      <p><strong>Last updated:</strong> March 6, 2026</p>
+    </header>
+
+    <section class="content">
+      <p class="lead">Lacto Tracker ("the App") helps users track breastfeeding sessions.</p>
+
+      <div class="grid">
+        <article class="section">
+          <div class="number">1</div>
+          <div>
+            <h2>Data We Collect</h2>
+            <p>We do not collect personal data on our servers. The App stores breastfeeding records locally on your device.</p>
+          </div>
+        </article>
+
+        <article class="section">
+          <div class="number">2</div>
+          <div>
+            <h2>How Data Is Used</h2>
+            <p>Your data is used only to provide core app features (tracking, statistics, widgets, Live Activities).</p>
+          </div>
+        </article>
+
+        <article class="section">
+          <div class="number">3</div>
+          <div>
+            <h2>Data Sharing</h2>
+            <p>We do not sell, share, or transfer your personal data to third parties.</p>
+          </div>
+        </article>
+
+        <article class="section">
+          <div class="number">4</div>
+          <div>
+            <h2>Analytics, Ads, and Tracking</h2>
+            <p>The App does not use third-party advertising SDKs and does not track users across apps or websites.</p>
+          </div>
+        </article>
+
+        <article class="section">
+          <div class="number">5</div>
+          <div>
+            <h2>Data Retention and Deletion</h2>
+            <p>Data is stored locally on your device. You can delete it in the app (if supported) or by uninstalling the app.</p>
+          </div>
+        </article>
+
+        <article class="section">
+          <div class="number">6</div>
+          <div>
+            <h2>Children's Privacy</h2>
+            <p>The App is intended for parents/caregivers and does not knowingly collect children's personal data.</p>
+          </div>
+        </article>
+
+        <article class="section">
+          <div class="number">7</div>
+          <div>
+            <h2>Changes to This Privacy Policy</h2>
+            <p>We may update this policy from time to time. The latest version is always available at this URL.</p>
+          </div>
+        </article>
+
+        <article class="section contact">
+          <div class="number">8</div>
+          <div>
+            <h2>Contact</h2>
+            <p>
+              Petr Primus<br />
+              Email: <a href="mailto:support@nocode23.com">support@nocode23.com</a>
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
       margin-top: 0;
       color: var(--muted);
     }
