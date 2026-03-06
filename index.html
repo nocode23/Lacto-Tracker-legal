@@ -5,38 +5,171 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Privacy Policy - Lacto Tracker</title>
   <style>
-    body { max-width: 760px; margin: 40px auto; padding: 0 16px; font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif; line-height: 1.6; }
-    h1, h2 { line-height: 1.25; }
+    :root {
+      --bg: #f6f8fc;
+      --surface: #ffffff;
+      --text: #0f172a;
+      --muted: #475569;
+      --primary: #0ea5e9;
+      --primary-soft: #e0f2fe;
+      --border: #dbe5f0;
+      --shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
+      --radius: 20px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: "Avenir Next", "Segoe UI", "SF Pro Text", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 10% 0%, #e0f2fe 0%, transparent 35%),
+        radial-gradient(circle at 90% 100%, #dbeafe 0%, transparent 30%),
+        var(--bg);
+      line-height: 1.65;
+      padding: 32px 16px;
+    }
+
+    .container {
+      max-width: 840px;
+      margin: 0 auto;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .hero {
+      padding: 40px 28px 26px;
+      background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+      color: #f8fafc;
+    }
+
+    .hero h1 {
+      margin: 0 0 10px;
+      font-size: clamp(1.7rem, 3.2vw, 2.3rem);
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+    }
+
+    .hero p {
+      margin: 0;
+      opacity: 0.95;
+      font-size: 0.98rem;
+    }
+
+    .content {
+      padding: 28px;
+    }
+
+    .lead {
+      margin-top: 0;
+      color: var(--muted);
+    }
+
+    .section {
+      margin-top: 18px;
+      padding: 18px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: #fcfdff;
+    }
+
+    .section h2 {
+      margin: 0 0 8px;
+      font-size: 1.05rem;
+      line-height: 1.3;
+    }
+
+    .section p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .contact {
+      background: var(--primary-soft);
+      border-color: #bae6fd;
+    }
+
+    a {
+      color: #0369a1;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 640px) {
+      .hero,
+      .content {
+        padding: 22px 18px;
+      }
+
+      .section {
+        padding: 14px;
+      }
+    }
   </style>
 </head>
 <body>
-  <h1>Privacy Policy for Lacto Tracker</h1>
-  <p><strong>Last updated:</strong> March 6, 2026</p>
-  <p>Lacto Tracker (“the App”) helps users track breastfeeding sessions.</p>
+  <main class="container">
+    <header class="hero">
+      <h1>Privacy Policy for Lacto Tracker</h1>
+      <p><strong>Last updated:</strong> March 6, 2026</p>
+    </header>
 
-  <h2>1. Data We Collect</h2>
-  <p>We do not collect personal data on our servers.</p>
-  <p>The App stores breastfeeding records locally on your device.</p>
+    <section class="content">
+      <p class="lead">Lacto Tracker ("the App") helps users track breastfeeding sessions.</p>
 
-  <h2>2. How Data Is Used</h2>
-  <p>Your data is used only to provide core app features (tracking, statistics, widgets, Live Activities).</p>
+      <article class="section">
+        <h2>1. Data We Collect</h2>
+        <p>We do not collect personal data on our servers. The App stores breastfeeding records locally on your device.</p>
+      </article>
 
-  <h2>3. Data Sharing</h2>
-  <p>We do not sell, share, or transfer your personal data to third parties.</p>
+      <article class="section">
+        <h2>2. How Data Is Used</h2>
+        <p>Your data is used only to provide core app features (tracking, statistics, widgets, Live Activities).</p>
+      </article>
 
-  <h2>4. Analytics, Ads, and Tracking</h2>
-  <p>The App does not use third-party advertising SDKs and does not track users across apps or websites.</p>
+      <article class="section">
+        <h2>3. Data Sharing</h2>
+        <p>We do not sell, share, or transfer your personal data to third parties.</p>
+      </article>
 
-  <h2>5. Data Retention and Deletion</h2>
-  <p>Data is stored locally on your device. You can delete it in the app (if supported) or by uninstalling the app.</p>
+      <article class="section">
+        <h2>4. Analytics, Ads, and Tracking</h2>
+        <p>The App does not use third-party advertising SDKs and does not track users across apps or websites.</p>
+      </article>
 
-  <h2>6. Children’s Privacy</h2>
-  <p>The App is intended for parents/caregivers and does not knowingly collect children’s personal data.</p>
+      <article class="section">
+        <h2>5. Data Retention and Deletion</h2>
+        <p>Data is stored locally on your device. You can delete it in the app (if supported) or by uninstalling the app.</p>
+      </article>
 
-  <h2>7. Changes to This Privacy Policy</h2>
-  <p>We may update this policy from time to time. The latest version is always available at this URL.</p>
+      <article class="section">
+        <h2>6. Children's Privacy</h2>
+        <p>The App is intended for parents/caregivers and does not knowingly collect children's personal data.</p>
+      </article>
 
-  <h2>8. Contact</h2>
-  <p>Petr Primus<br>Email: support@nocode23.com</p>
+      <article class="section">
+        <h2>7. Changes to This Privacy Policy</h2>
+        <p>We may update this policy from time to time. The latest version is always available at this URL.</p>
+      </article>
+
+      <article class="section contact">
+        <h2>8. Contact</h2>
+        <p>
+          Petr Primus<br />
+          Email: <a href="mailto:support@nocode23.com">support@nocode23.com</a>
+        </p>
+      </article>
+    </section>
+  </main>
 </body>
 </html>
