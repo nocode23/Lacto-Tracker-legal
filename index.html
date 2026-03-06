@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -118,6 +119,44 @@
       font-size: 1.03rem;
     }
 
+    .feature-panel {
+      margin: 0 0 22px;
+      padding: 20px;
+      background: linear-gradient(135deg, #ffffff, #f3fbff);
+      border: 1px solid #bfe9f7;
+      border-radius: var(--radius-md);
+    }
+
+    .feature-title {
+      margin: 0 0 12px;
+      font-family: "Sora", "Avenir Next", sans-serif;
+      font-size: 1.05rem;
+      color: var(--primary-deep);
+    }
+
+    .feature-list {
+      margin: 0;
+      padding-left: 1.1rem;
+      color: var(--muted);
+      display: grid;
+      gap: 8px;
+    }
+
+    .feature-note {
+      margin: 14px 0 0;
+      color: var(--muted);
+    }
+
+    .feature-warning {
+      margin: 14px 0 0;
+      padding: 10px 12px;
+      border-radius: 12px;
+      background: #fff6e8;
+      border: 1px solid #ffe1b3;
+      color: #8a4b00;
+      font-weight: 600;
+    }
+
     .grid {
       display: grid;
       gap: 14px;
@@ -135,13 +174,33 @@
       animation: riseIn 0.45s ease both;
     }
 
-    .section:nth-child(2) { animation-delay: 0.03s; }
-    .section:nth-child(3) { animation-delay: 0.06s; }
-    .section:nth-child(4) { animation-delay: 0.09s; }
-    .section:nth-child(5) { animation-delay: 0.12s; }
-    .section:nth-child(6) { animation-delay: 0.15s; }
-    .section:nth-child(7) { animation-delay: 0.18s; }
-    .section:nth-child(8) { animation-delay: 0.21s; }
+    .section:nth-child(2) {
+      animation-delay: 0.03s;
+    }
+
+    .section:nth-child(3) {
+      animation-delay: 0.06s;
+    }
+
+    .section:nth-child(4) {
+      animation-delay: 0.09s;
+    }
+
+    .section:nth-child(5) {
+      animation-delay: 0.12s;
+    }
+
+    .section:nth-child(6) {
+      animation-delay: 0.15s;
+    }
+
+    .section:nth-child(7) {
+      animation-delay: 0.18s;
+    }
+
+    .section:nth-child(8) {
+      animation-delay: 0.21s;
+    }
 
     .number {
       width: 34px;
@@ -185,6 +244,7 @@
         opacity: 0;
         transform: translateY(8px);
       }
+
       to {
         opacity: 1;
         transform: translateY(0);
@@ -224,6 +284,7 @@
     }
   </style>
 </head>
+
 <body>
   <div class="glow a" aria-hidden="true"></div>
   <div class="glow b" aria-hidden="true"></div>
@@ -235,14 +296,30 @@
     </header>
 
     <section class="content">
-      <p class="lead">Lacto Tracker ("the App") helps users track breastfeeding sessions.</p>
+      <p class="lead">Lacto Tracker ("the App") helps you quickly log breastfeeding sessions and keep a clear daily
+        overview.</p>
+      <section class="feature-panel" aria-label="App features">
+        <h2 class="feature-title">Key Features</h2>
+        <ul class="feature-list">
+          <li>One-tap start and stop</li>
+          <li>Track left, right, or both sides</li>
+          <li>Session duration and daily totals</li>
+          <li>Statistics for today, last 7 days, last 30 days, and all time</li>
+          <li>Widget and Live Activity support for faster access</li>
+        </ul>
+        <p class="feature-note">Designed for parents who want fast, simple tracking without unnecessary complexity.</p>
+        <p class="feature-warning">Important: Lacto Tracker is not a medical device and does not provide medical
+          advice.</p>
+      </section>
+
 
       <div class="grid">
         <article class="section">
           <div class="number">1</div>
           <div>
             <h2>Data We Collect</h2>
-            <p>We do not collect personal data on our servers. The App stores breastfeeding records locally on your device.</p>
+            <p>We do not collect personal data on our servers. The App stores breastfeeding records locally on your
+              device.</p>
           </div>
         </article>
 
@@ -274,7 +351,8 @@
           <div class="number">5</div>
           <div>
             <h2>Data Retention and Deletion</h2>
-            <p>Data is stored locally on your device. You can delete it in the app (if supported) or by uninstalling the app.</p>
+            <p>Data is stored locally on your device. You can delete it in the app (if supported) or by uninstalling the
+              app.</p>
           </div>
         </article>
 
@@ -308,109 +386,5 @@
     </section>
   </main>
 </body>
-</html>
-      margin-top: 0;
-      color: var(--muted);
-    }
 
-    .section {
-      margin-top: 18px;
-      padding: 18px;
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      background: #fcfdff;
-    }
-
-    .section h2 {
-      margin: 0 0 8px;
-      font-size: 1.05rem;
-      line-height: 1.3;
-    }
-
-    .section p {
-      margin: 0;
-      color: var(--muted);
-    }
-
-    .contact {
-      background: var(--primary-soft);
-      border-color: #bae6fd;
-    }
-
-    a {
-      color: #0369a1;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    @media (max-width: 640px) {
-      .hero,
-      .content {
-        padding: 22px 18px;
-      }
-
-      .section {
-        padding: 14px;
-      }
-    }
-  </style>
-</head>
-<body>
-  <main class="container">
-    <header class="hero">
-      <h1>Privacy Policy for Lacto Tracker</h1>
-      <p><strong>Last updated:</strong> March 6, 2026</p>
-    </header>
-
-    <section class="content">
-      <p class="lead">Lacto Tracker ("the App") helps users track breastfeeding sessions.</p>
-
-      <article class="section">
-        <h2>1. Data We Collect</h2>
-        <p>We do not collect personal data on our servers. The App stores breastfeeding records locally on your device.</p>
-      </article>
-
-      <article class="section">
-        <h2>2. How Data Is Used</h2>
-        <p>Your data is used only to provide core app features (tracking, statistics, widgets, Live Activities).</p>
-      </article>
-
-      <article class="section">
-        <h2>3. Data Sharing</h2>
-        <p>We do not sell, share, or transfer your personal data to third parties.</p>
-      </article>
-
-      <article class="section">
-        <h2>4. Analytics, Ads, and Tracking</h2>
-        <p>The App does not use third-party advertising SDKs and does not track users across apps or websites.</p>
-      </article>
-
-      <article class="section">
-        <h2>5. Data Retention and Deletion</h2>
-        <p>Data is stored locally on your device. You can delete it in the app (if supported) or by uninstalling the app.</p>
-      </article>
-
-      <article class="section">
-        <h2>6. Children's Privacy</h2>
-        <p>The App is intended for parents/caregivers and does not knowingly collect children's personal data.</p>
-      </article>
-
-      <article class="section">
-        <h2>7. Changes to This Privacy Policy</h2>
-        <p>We may update this policy from time to time. The latest version is always available at this URL.</p>
-      </article>
-
-      <article class="section contact">
-        <h2>8. Contact</h2>
-        <p>
-          Petr Primus<br />
-          Email: <a href="mailto:support@nocode23.com">support@nocode23.com</a>
-        </p>
-      </article>
-    </section>
-  </main>
-</body>
 </html>
